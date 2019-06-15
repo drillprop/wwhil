@@ -15,7 +15,6 @@ const StyledHeader = styled.header`
   color: ${light};
   grid-row: 3/6;
   grid-column: 2/5;
-  position: relative;
 `;
 const StyledH3 = styled(animated.h3)`
   font-weight: 400;
@@ -25,6 +24,7 @@ const StyledH3 = styled(animated.h3)`
   color: ${middle};
   font-family: ${sansSerif};
   text-transform: uppercase;
+  text-align: right;
   margin-bottom: 1em;
 `;
 const HideDiv = styled(animated.div)`
@@ -64,11 +64,13 @@ const Quote = () => {
   return (
     <Wrapper>
       <StyledHeader>
-        <StyledH3 style={propsH3}>Przysłowie kazachskie</StyledH3>
-        <HideDiv style={hideDiv} />
         <StyledH1 style={propsH1}>
           " Ten, kto robi kocioł, może umieścić ucho tam, gdzie chce "
         </StyledH1>
+        <div style={{ position: 'relative' }}>
+          <StyledH3 style={propsH3}>Przysłowie kazachskie</StyledH3>
+          <HideDiv style={hideDiv} />
+        </div>
       </StyledHeader>
     </Wrapper>
   );
