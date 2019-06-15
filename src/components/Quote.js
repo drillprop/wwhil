@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { dark, light, middle } from '../utils/colors';
 import { sansSerif } from '../utils/fonts';
+import { useSpring, useTrail, animated } from 'react-spring';
 
 const Wrapper = styled.div`
   display: grid;
@@ -25,7 +26,7 @@ const StyledH3 = styled.h3`
   text-transform: uppercase;
   margin-bottom: 1em;
 `;
-const StyledH1 = styled.h1`
+const StyledH1 = styled(animated.h1)`
   margin: 0;
   font-size: 3em;
   font-weight: 400;
@@ -33,11 +34,15 @@ const StyledH1 = styled.h1`
 `;
 
 const Quote = () => {
+  const props = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 }
+  });
   return (
     <Wrapper>
       <StyledHeader>
         <StyledH3>Przysłowie kazachskie</StyledH3>
-        <StyledH1>
+        <StyledH1 style={props}>
           " Ten, kto robi kocioł, może umieścić ucho tam, gdzie chce "
         </StyledH1>
       </StyledHeader>
