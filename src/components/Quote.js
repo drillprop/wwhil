@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { dark, light } from '../utils/colors';
+import { dark, light, middle } from '../utils/colors';
+import { sansSerif } from '../utils/fonts';
 
 const Wrapper = styled.div`
   display: grid;
@@ -15,11 +16,20 @@ const StyledHeader = styled.header`
   grid-column: 2/5;
 `;
 const StyledH3 = styled.h3`
+  font-weight: 400;
+  font-size: 1em;
+  letter-spacing: 3px;
   margin: 0;
+  color: ${middle};
+  font-family: ${sansSerif};
   text-transform: uppercase;
+  margin-bottom: 1em;
 `;
 const StyledH1 = styled.h1`
   margin: 0;
+  font-size: 3em;
+  font-weight: 400;
+  font-style: italic;
 `;
 
 const Quote = () => {
