@@ -28,11 +28,11 @@ const StyledH3 = styled(animated.h3)`
   margin-bottom: 1em;
 `;
 const HideDiv = styled(animated.div)`
-  position: absolute;
-  top: 0;
   width: 100%;
-  height: 20px;
+  height: 50px;
   background-color: ${dark};
+  top: -10px;
+  position: relative;
 `;
 const StyledH1 = styled(animated.h1)`
   margin: 0;
@@ -50,27 +50,20 @@ const Quote = () => {
   });
   const h3ref = useRef();
   const propsH3 = useSpring({
-    from: { opacity: 0 },
-    to: { opacity: 1 },
+    from: { opacity: 1, transform: 'translateY(35px)' },
+    to: { opacity: 1, transform: 'translateY(0)' },
     ref: h3ref
   });
-  const hideDivRef = useRef();
-  const hideDiv = useSpring({
-    from: { height: '20px' },
-    to: { height: '0px' },
-    ref: hideDivRef
-  });
-  useChain([h1ref, h3ref, hideDivRef], [0.4, 1, 0.9]);
+
+  useChain([h1ref, h3ref], [0.4, 1]);
   return (
     <Wrapper>
       <StyledHeader>
         <StyledH1 style={propsH1}>
           " Ten, kto robi kocioł, może umieścić ucho tam, gdzie chce "
         </StyledH1>
-        <div style={{ position: 'relative' }}>
-          <StyledH3 style={propsH3}>Przysłowie kazachskie</StyledH3>
-          <HideDiv style={hideDiv} />
-        </div>
+        <StyledH3 style={propsH3}>Przysłowie kazachskie</StyledH3>
+        <HideDiv />
       </StyledHeader>
     </Wrapper>
   );
