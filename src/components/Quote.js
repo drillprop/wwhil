@@ -3,14 +3,8 @@ import styled from 'styled-components';
 import { dark, light, middle } from '../utils/colors';
 import { sansSerif } from '../utils/fonts';
 import { useSpring, useChain, animated } from 'react-spring';
+import { Wrapper } from '../elements/Wrapper';
 
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  background-color: ${dark};
-  height: 100vh;
-`;
 const StyledHeader = styled.header`
   color: ${light};
   grid-row: 3/6;
@@ -72,7 +66,7 @@ const Quote = () => {
 
   useChain([h1ref, h3ref], [0.4, 1]);
   return (
-    <Wrapper>
+    <Wrapper background={dark}>
       <StyledHeader>
         <StyledH1 style={propsH1}>
           " Ten, kto robi kocioł, może umieścić ucho tam, gdzie chce "
