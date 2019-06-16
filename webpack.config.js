@@ -26,8 +26,10 @@ module.exports = {
     ]
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    overlay: true
   },
+  stats: 'minimal',
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html'
