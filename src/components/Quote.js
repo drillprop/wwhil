@@ -39,6 +39,18 @@ const StyledH1 = styled(animated.h1)`
   font-size: 3em;
   font-weight: 400;
   font-style: italic;
+  animation: moveAnimation 25s linear infinite;
+  @keyframes moveAnimation {
+    0% {
+      transform: translateX(-40px);
+    }
+    50% {
+      transform: translateX(30px);
+    }
+    100% {
+      transform: translateX(-40px);
+    }
+  }
 `;
 
 const Quote = () => {
