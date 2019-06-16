@@ -1,10 +1,12 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Route, Switch, __RouterContext } from 'react-router-dom';
 import Quote from './Quote';
 import Title from './Title';
 import Text from './Text';
 
 const Router = () => {
+  const context = useContext(__RouterContext);
+  console.log(context);
   return (
     <Switch>
       <Route path='/' exact component={Quote} />
