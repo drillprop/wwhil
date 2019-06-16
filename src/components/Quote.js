@@ -31,7 +31,7 @@ const HideDiv = styled(animated.div)`
   width: 100%;
   height: 50px;
   background-color: ${dark};
-  top: -10px;
+  top: -19px;
   position: relative;
 `;
 const StyledH1 = styled(animated.h1)`
