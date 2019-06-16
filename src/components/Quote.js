@@ -56,6 +56,9 @@ const StyledH1 = styled(animated.h1)`
 const Quote = () => {
   const h1ref = useRef();
   const propsH1 = useSpring({
+    config: {
+      duration: 2000
+    },
     from: { transform: 'translateX(-40px)', opacity: 0 },
     to: { transform: 'translateX(0)', opacity: 1 },
     ref: h1ref
