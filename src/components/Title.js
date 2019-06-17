@@ -6,8 +6,8 @@ import { dark } from '../utils/colors';
 import ImageBackground from './ImageBackground';
 
 const StyledHeader = styled.header`
-  grid-row: 1;
-  grid-column: 1;
+  grid-row: 3/4;
+  grid-column: 3;
 `;
 const StyledTitle = styled.h1`
   position: relative;
