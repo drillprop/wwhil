@@ -47,7 +47,12 @@ const StyledH1 = styled(animated.h1)`
   }
 `;
 
-const Quote = () => {
+const Quote = ({ history }) => {
+  const handleOnWheel = e => {
+    if (e.deltaY > 0) {
+      history.push('/title');
+    }
+  };
   const h1ref = useRef();
   const propsH1 = useSpring({
     config: {
@@ -66,7 +71,7 @@ const Quote = () => {
 
   useChain([h1ref, h3ref], [0.4, 1]);
   return (
-    <Wrapper background={dark}>
+    <Wrapper background={dark} onWheel={handleOnWheel}>
       <StyledHeader>
         <StyledH1 style={propsH1}>
           " Ten, kto robi kocioł, może umieścić ucho tam, gdzie chce "

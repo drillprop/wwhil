@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrapper } from '../elements/Wrapper';
 import styled from 'styled-components';
 import { serif, sansSerif } from '../utils/fonts';
-import { dark, middle } from '../utils/colors';
+import { dark } from '../utils/colors';
 
 const StyledHeader = styled.header`
   grid-row: 1;
@@ -29,9 +29,16 @@ const SubTitle = styled.h3`
   font-family: ${sansSerif};
 `;
 
-const Title = () => {
+const Title = ({ history }) => {
+  const handleOnWheel = e => {
+    if (e.deltaY < 0) {
+      history.push('/');
+    } else {
+      history.push('/text');
+    }
+  };
   return (
-    <Wrapper>
+    <Wrapper onWheel={handleOnWheel}>
       <StyledHeader>
         <StyledTitle>kafli</StyledTitle>
         <SubTitle>Literat, Prozaik, Pisarz Wrocław, 3/4 VIII 2013</SubTitle>
