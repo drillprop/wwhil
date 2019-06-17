@@ -3,6 +3,7 @@ import { Wrapper } from '../elements/Wrapper';
 import styled from 'styled-components';
 import { serif, sansSerif } from '../utils/fonts';
 import { dark } from '../utils/colors';
+import ImageBackground from './ImageBackground';
 
 const StyledHeader = styled.header`
   grid-row: 1;
@@ -39,6 +40,7 @@ const Title = ({ history }) => {
   };
   return (
     <Wrapper onWheel={handleOnWheel}>
+      <ImageBackground />
       <StyledHeader>
         <StyledTitle>kafli</StyledTitle>
         <SubTitle>Literat, Prozaik, Pisarz Wrocław, 3/4 VIII 2013</SubTitle>
