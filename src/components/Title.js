@@ -16,6 +16,7 @@ const StyledTitle = styled.h1`
   margin: 0;
   font-style: italic;
   font-size: 25rem;
+  text-shadow: 20px 10px 10px rgba(0, 0, 0, 0.15);
 `;
 const SubTitle = styled.h3`
   position: relative;
