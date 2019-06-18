@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { serif, sansSerif } from '../utils/fonts';
 import { dark, light } from '../utils/colors';
 import ImageBackground from './ImageBackground';
-import { useSpring, animated } from 'react-spring';
+import { useSpring, useTrail, animated } from 'react-spring';
 
 const StyledHeader = styled.header`
   grid-row: 3/4;
@@ -53,12 +53,29 @@ const Title = ({ history }) => {
       friction: 20
     }
   });
+  let wroteBy = 'Literat, Prozaik, Pisarz Wrocław, 3/4 VIII 2013';
+  let words = wroteBy.split(' ');
+  const trail = useTrail(words.length, {
+    from: {
+      opacity: 0
+    },
+    to: {
+      opacity: 1
+    },
+    delay: 700
+  });
   return (
     <Wrapper onWheel={handleOnWheel}>
       <ImageBackground />
       <StyledHeader>
         <StyledTitle style={props}>kafli</StyledTitle>
-        <SubTitle>Literat, Prozaik, Pisarz Wrocław, 3/4 VIII 2013</SubTitle>
+        <SubTitle>
+          {trail.map((style, index) => (
+            <animated.span key={words[index]} style={style}>
+              {words[index] + ' '}
+            </animated.span>
+          ))}
+        </SubTitle>
       </StyledHeader>
     </Wrapper>
   );
