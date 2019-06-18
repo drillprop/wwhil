@@ -1,12 +1,13 @@
-import React, { useContext } from 'react';
-import { Route, Switch, __RouterContext } from 'react-router-dom';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Quote from './Quote';
 import Title from './Title';
 import Text from './Text';
 import { useTransition, animated } from 'react-spring';
+import withPageChanger from './withPageChanger';
 
-const Router = () => {
-  const { location } = useContext(__RouterContext);
+const Router = ({ context }) => {
+  const { location } = context;
   const animation = {
     from: { position: 'absolute', opacity: 0 },
     enter: { opacity: 1 },
@@ -32,4 +33,4 @@ const Router = () => {
   );
 };
 
-export default Router;
+export default withPageChanger(Router);
