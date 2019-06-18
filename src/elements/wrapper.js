@@ -8,4 +8,5 @@ export const Wrapper = styled.div`
   background-color: ${({ background = light }) => background};
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
 `;

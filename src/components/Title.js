@@ -2,21 +2,22 @@ import React from 'react';
 import { Wrapper } from '../elements/Wrapper';
 import styled from 'styled-components';
 import { serif, sansSerif } from '../utils/fonts';
-import { dark } from '../utils/colors';
+import { dark, light } from '../utils/colors';
 import ImageBackground from './ImageBackground';
+import { useSpring, animated } from 'react-spring';
 
 const StyledHeader = styled.header`
   grid-row: 3/4;
   grid-column: 3;
 `;
-const StyledTitle = styled.h1`
+const StyledTitle = styled(animated.h1)`
   position: relative;
   font-family: ${serif};
   color: ${dark};
   margin: 0;
   font-style: italic;
   font-size: 25rem;
-  text-shadow: 20px 10px 10px rgba(0, 0, 0, 0.15);
+  text-shadow: 10px 5px ${light};
 `;
 const SubTitle = styled.h3`
   position: relative;
@@ -39,11 +40,24 @@ const Title = ({ history }) => {
       history.push('/text');
     }
   };
+  const props = useSpring({
+    from: {
+      transform: 'scale(5) translate(-500px, 0) rotate(-90deg) skewX(60deg)'
+    },
+    to: {
+      transform: 'scale(1) translate(0, 0) rotate(0) skewX(0)'
+    },
+    config: {
+      mass: 2,
+      tension: 90,
+      friction: 20
+    }
+  });
   return (
     <Wrapper onWheel={handleOnWheel}>
       <ImageBackground />
       <StyledHeader>
-        <StyledTitle>kafli</StyledTitle>
+        <StyledTitle style={props}>kafli</StyledTitle>
         <SubTitle>Literat, Prozaik, Pisarz Wrocław, 3/4 VIII 2013</SubTitle>
       </StyledHeader>
     </Wrapper>
