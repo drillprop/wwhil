@@ -32,14 +32,7 @@ const SubTitle = styled.h3`
   font-family: ${sansSerif};
 `;
 
-const Title = ({ history }) => {
-  const handleOnWheel = e => {
-    if (e.deltaY < 0) {
-      history.push('/');
-    } else {
-      history.push('/text');
-    }
-  };
+const Title = () => {
   const props = useSpring({
     from: {
       transform: 'scale(5) translate(-500px, 0) rotate(-90deg) skewX(60deg)'
@@ -65,7 +58,7 @@ const Title = ({ history }) => {
     delay: 700
   });
   return (
-    <Wrapper onWheel={handleOnWheel}>
+    <Wrapper>
       <ImageBackground />
       <StyledHeader>
         <StyledTitle style={props}>kafli</StyledTitle>

@@ -1,14 +1,9 @@
 import React from 'react';
 import { Wrapper } from '../elements/Wrapper';
 
-const Text = ({ history }) => {
-  const handleOnWheel = e => {
-    if (e.deltaY < 0) {
-      history.push('/title');
-    }
-  };
+const Text = () => {
   return (
-    <Wrapper onWheel={handleOnWheel}>
+    <Wrapper>
       <p>text</p>
     </Wrapper>
   );
