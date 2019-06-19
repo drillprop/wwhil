@@ -24,7 +24,7 @@ const withPageChanger = Component => props => {
 
   return (
     <div onWheel={handleOnWheel}>
-      <Component {...props} context={context} />;
+      <Component {...props} context={context} />
     </div>
   );
 };
