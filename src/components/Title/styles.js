@@ -24,7 +24,7 @@ export const StyledHeader = styled.header`
   grid-row: 3/4;
   grid-column: 3;
 `;
-export const StyledTitle = styled(animated.h1)`
+export const MainTitle = styled(animated.h1)`
   position: relative;
   font-family: ${serif};
   color: ${dark};

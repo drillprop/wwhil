@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useChain, useSpring } from 'react-spring';
 import { Wrapper } from '../../elements/Wrapper';
 import { dark } from '../../utils/colors';
-import { HideDiv, StyledH1, StyledH3, StyledHeader } from './styles';
+import { HideDiv, Proverb, ProverbAuthor, StyledHeader } from './styles';
 
 const Quote = () => {
   const h1ref = useRef();
@@ -25,10 +25,10 @@ const Quote = () => {
   return (
     <Wrapper background={dark}>
       <StyledHeader>
-        <StyledH1 style={propsH1}>
+        <Proverb style={propsH1}>
           " Ten, kto robi kocioł, może umieścić ucho tam, gdzie chce "
-        </StyledH1>
-        <StyledH3 style={propsH3}>Przysłowie kazachskie</StyledH3>
+        </Proverb>
+        <ProverbAuthor style={propsH3}>Przysłowie kazachskie</ProverbAuthor>
         <HideDiv />
       </StyledHeader>
     </Wrapper>

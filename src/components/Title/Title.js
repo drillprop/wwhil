@@ -2,7 +2,7 @@ import React from 'react';
 import { animated, useSpring, useTrail } from 'react-spring';
 import { Wrapper } from '../../elements/Wrapper';
 import ImageBackground from './ImageBackground';
-import { StyledHeader, StyledTitle, SubTitle } from './styles';
+import { StyledHeader, MainTitle, SubTitle } from './styles';
 
 const Title = () => {
   const props = useSpring({
@@ -33,7 +33,7 @@ const Title = () => {
     <Wrapper>
       <ImageBackground />
       <StyledHeader>
-        <StyledTitle style={props}>kafli</StyledTitle>
+        <MainTitle style={props}>kafli</MainTitle>
         <SubTitle>
           {trail.map((style, index) => (
             <animated.span key={words[index]} style={style}>

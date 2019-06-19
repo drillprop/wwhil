@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
   grid-row: 3/6;
   grid-column: 2/5;
 `;
-export const StyledH3 = styled(animated.h3)`
+export const ProverbAuthor = styled(animated.h3)`
   font-weight: 400;
   font-size: 1em;
   letter-spacing: 3px;
@@ -17,6 +17,7 @@ export const StyledH3 = styled(animated.h3)`
   font-family: ${sansSerif};
   text-transform: uppercase;
   text-align: right;
+  margin-top: 2em;
   margin-bottom: 1em;
 `;
 export const HideDiv = styled(animated.div)`
@@ -26,7 +27,7 @@ export const HideDiv = styled(animated.div)`
   top: -19px;
   position: relative;
 `;
-export const StyledH1 = styled(animated.h1)`
+export const Proverb = styled(animated.h1)`
   margin: 0;
   font-size: 3em;
   font-weight: 400;
