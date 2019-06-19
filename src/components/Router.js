@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { animated, useTransition } from 'react-spring';
 import withPageChanger from '../utils/withPageChanger';
 import Quote from './Quote/Quote';
+import Presents from './Presents/Presents';
 import Text from './Text/Text';
 import Title from './Title/Title';
 
@@ -25,6 +26,7 @@ const Router = ({ context }) => {
           <Switch location={item}>
             <Route path='/' exact component={Quote} />
             <Route path='/title' component={Title} />
+            <Route path='/presents' component={Presents} />
             <Route path='/text' component={Text} />
           </Switch>
         </animated.div>
