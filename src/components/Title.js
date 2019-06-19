@@ -35,10 +35,12 @@ const SubTitle = styled.h3`
 const Title = () => {
   const props = useSpring({
     from: {
-      transform: 'scale(5) translate(-500px, 0) rotate(-90deg) skewX(60deg)'
+      transform: 'scale(5) translate(-500px, 0) rotate(-90deg) skewX(60deg)',
+      filter: 'blur(5px)'
     },
     to: {
-      transform: 'scale(1) translate(0, 0) rotate(0) skewX(0)'
+      transform: 'scale(1) translate(0, 0) rotate(0) skewX(0)',
+      filter: 'blur(0)'
     },
     config: {
       mass: 2,
