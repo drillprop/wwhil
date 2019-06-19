@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper } from '../elements/Wrapper';
+import { Wrapper } from '../../elements/Wrapper';
 
 const Text = () => {
   return (

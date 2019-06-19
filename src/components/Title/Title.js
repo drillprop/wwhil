@@ -1,36 +1,8 @@
 import React from 'react';
-import { Wrapper } from '../elements/Wrapper';
-import styled from 'styled-components';
-import { serif, sansSerif } from '../utils/fonts';
-import { dark, light } from '../utils/colors';
+import { animated, useSpring, useTrail } from 'react-spring';
+import { Wrapper } from '../../elements/Wrapper';
 import ImageBackground from './ImageBackground';
-import { useSpring, useTrail, animated } from 'react-spring';
-
-const StyledHeader = styled.header`
-  grid-row: 3/4;
-  grid-column: 3;
-`;
-const StyledTitle = styled(animated.h1)`
-  position: relative;
-  font-family: ${serif};
-  color: ${dark};
-  margin: 0;
-  font-style: italic;
-  font-size: 25rem;
-  text-shadow: 10px 5px ${light};
-`;
-const SubTitle = styled.h3`
-  position: relative;
-  display: inline;
-  top: -80px;
-  left: 600px;
-  font-weight: 400;
-  font-size: 0.9rem;
-  letter-spacing: 3px;
-  margin: 0;
-  color: ${dark};
-  font-family: ${sansSerif};
-`;
+import { StyledHeader, StyledTitle, SubTitle } from './styles';
 
 const Title = () => {
   const props = useSpring({

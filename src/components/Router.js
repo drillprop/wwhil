@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Quote from './Quote';
-import Title from './Title';
-import Text from './Text';
-import { useTransition, animated } from 'react-spring';
-import withPageChanger from './withPageChanger';
+import { animated, useTransition } from 'react-spring';
+import withPageChanger from '../utils/withPageChanger';
+import Quote from './Quote/Quote';
+import Text from './Text/Text';
+import Title from './Title/Title';
 
 const Router = ({ context }) => {
   const { location } = context;
