@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import { __RouterContext } from 'react-router-dom';
+import debounce from 'lodash.debounce';
 
 const withPageChanger = Component => props => {
   const paths = ['', 'title', 'text'];
@@ -11,11 +12,14 @@ const withPageChanger = Component => props => {
   const handleOnWheel = e => {
     const currentPath = location.pathname.substring(1);
     const index = paths.indexOf(currentPath);
-    if (e.deltaY > 0) {
-      history.push(`/${paths[index + 1] || paths[paths.length - 1]}`);
-    } else {
-      history.push(`/${paths[index - 1] || paths[0]}`);
-    }
+    const changePath = debounce(delta => {
+      if (delta > 0) {
+        history.push(`/${paths[index + 1] || paths[paths.length - 1]}`);
+      } else {
+        history.push(`/${paths[index - 1] || paths[0]}`);
+      }
+    }, 250);
+    changePath(e.deltaY);
   };
 
   return (
