@@ -24,20 +24,33 @@ export const StyledHeader = styled.header`
   grid-row: 3/4;
   grid-column: 3;
 `;
+export const UpperTitle = styled(animated.h1)`
+  position: relative;
+  font-family: ${sansSerif};
+  color: ${dark};
+  top: 80px;
+  left: 20px;
+  font-weight: 700;
+  opacity: 0.8;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 2rem;
+  text-shadow: 2px 3px ${light};
+`;
 export const MainTitle = styled(animated.h1)`
   position: relative;
   font-family: ${serif};
   color: ${dark};
   margin: 0;
   font-style: italic;
-  font-size: 25rem;
+  font-size: 15rem;
   text-shadow: 10px 5px ${light};
 `;
 export const SubTitle = styled.h3`
   position: relative;
   display: inline;
-  top: -80px;
-  left: 600px;
+  top: -30px;
+  left: 400px;
   font-weight: 400;
   font-size: 0.9rem;
   letter-spacing: 3px;

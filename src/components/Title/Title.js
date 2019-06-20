@@ -2,7 +2,7 @@ import React from 'react';
 import { animated, useSpring, useTrail } from 'react-spring';
 import { Wrapper } from '../../elements/Wrapper';
 import ImageBackground from './ImageBackground';
-import { StyledHeader, MainTitle, SubTitle } from './styles';
+import { StyledHeader, MainTitle, SubTitle, LowerTitle } from './styles';
 
 const Title = () => {
   const props = useSpring({
@@ -18,7 +18,7 @@ const Title = () => {
       friction: 20
     }
   });
-  let wroteBy = 'Literat, Prozaik, Pisarz Wrocław, 3/4 VIII 2013';
+  let wroteBy = 'Cesarz, Literat, Prozaik, Pisarz';
   let words = wroteBy.split(' ');
   const trail = useTrail(words.length, {
     from: {
@@ -33,7 +33,8 @@ const Title = () => {
     <Wrapper>
       <ImageBackground />
       <StyledHeader>
-        <MainTitle style={props}>kafli</MainTitle>
+        <LowerTitle style={props}>falanga literacka</LowerTitle>
+        <MainTitle style={props}>wwhil</MainTitle>
         <SubTitle>
           {trail.map((style, index) => (
             <animated.span key={words[index]} style={style}>
