@@ -3,7 +3,7 @@ import { __RouterContext } from 'react-router-dom';
 import debounce from 'lodash.debounce';
 
 const withPageChanger = Component => props => {
-  const paths = ['', 'title', 'text'];
+  const paths = ['', 'title'];
 
   const context = useContext(__RouterContext);
 
