@@ -2,6 +2,7 @@ import { animated } from 'react-spring';
 import styled from 'styled-components';
 import { dark, light } from '../../utils/colors';
 import { sansSerif, serif } from '../../utils/fonts';
+import background from '../../assets/img/background.jpg';
 
 export const White = styled.div`
   position: absolute;
@@ -14,7 +15,7 @@ export const Background = styled.div`
   position: absolute;
   height: 100%;
   width: 100%;
-  background: url('./src/assets/img/background.jpg');
+  background: url(${background});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 30%;
